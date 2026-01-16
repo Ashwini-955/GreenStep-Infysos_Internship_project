@@ -4,6 +4,8 @@ FROM eclipse-temurin:17-jdk
 # Set working directory
 WORKDIR /app
 
+RUN chmod +x mvnw
+
 # Copy everything
 COPY . .
 
