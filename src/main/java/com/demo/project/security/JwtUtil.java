@@ -15,10 +15,10 @@ public class JwtUtil {
 
     @Value("${jwt.secret}")
     private String secret;
-
+    
     @Value("${jwt.expiration}")
-    private long expiration;
-
+    private final long expiration = 86400000;
+    
     // 🔑 Generate signing key (HS256 needs 256+ bits)
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(secret.getBytes());
