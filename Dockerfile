@@ -2,13 +2,10 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-# ✅ First copy files
+# Copy only required files
 COPY . .
 
-# ✅ Then give permission
 RUN chmod +x mvnw
-
-# ✅ Build project
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8091
