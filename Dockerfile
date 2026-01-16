@@ -1,19 +1,16 @@
-# Use Java 17
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:17-jdk-alpine
 
-# Set working directory
 WORKDIR /app
 
-RUN chmod +x mvnw
-
-# Copy everything
+# ✅ First copy files
 COPY . .
 
-# Build the project
+# ✅ Then give permission
+RUN chmod +x mvnw
+
+# ✅ Build project
 RUN ./mvnw clean package -DskipTests
 
-# Expose port
 EXPOSE 8091
 
-# Run the app
-CMD ["java", "-jar", "target/CarbonPersonalFootPrintApp-1-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","target/CarbonPersonalFootPrintApp-1-0.0.1-SNAPSHOT.jar"]
