@@ -12,7 +12,7 @@ export default function History() {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "http://localhost:8091/api/carbon/my-history",
+          "https://greenstep-106r.onrender.com/api/carbon/my-history",
           {
             headers: {
               Authorization: `Bearer ${token}`,

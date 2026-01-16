@@ -16,7 +16,7 @@ export default function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8091/api/auth/login",
+        "https://greenstep-106r.onrender.com/api/auth/login",
         {
           email,
           password,

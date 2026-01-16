@@ -24,7 +24,7 @@ export default function Calculate() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:8091/api/survey",
+        "https://greenstep-106r.onrender.com/api/survey",
         {
           transportMode: form.transportMode,
           dietType: form.dietType,
